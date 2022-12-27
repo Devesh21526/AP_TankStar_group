@@ -54,13 +54,13 @@ public class Pause implements Screen {
         if (Gdx.input.justTouched()) {
             System.out.println("x=" + Gdx.input.getX() + " y=" + Gdx.input.getY());
         }
-        if(Gdx.input.isTouched()&&(Gdx.input.getX() > 222 && Gdx.input.getX()<383) && (Gdx.input.getY()>121 && Gdx.input.getY()<167) ){
+        if(/*Gdx.input.isTouched()&&(Gdx.input.getX() > 222 && Gdx.input.getX()<383) && (Gdx.input.getY()>121 && Gdx.input.getY()<167)*/Gdx.input.isKeyPressed(Input.Keys.R) ){
             this.rsume();
         }
-        if(Gdx.input.isTouched()&&(Gdx.input.getX() > 224 && Gdx.input.getX()<383) && (Gdx.input.getY()>188 && Gdx.input.getY()<225) ){
+        if(Gdx.input.isKeyPressed(Input.Keys.S) ){
             this.savedg();
         }
-        if(Gdx.input.isTouched()&&(Gdx.input.getX() > 222 && Gdx.input.getX()<383) && (Gdx.input.getY()>254 && Gdx.input.getY()<289) ){
+        if(Gdx.input.isKeyPressed(Input.Keys.N) ){
             this.newgm();
         }
         game.batch.end();

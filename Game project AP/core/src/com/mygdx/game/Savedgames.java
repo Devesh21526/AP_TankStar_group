@@ -2,11 +2,14 @@ package com.mygdx.game;
 //for saved menu in main menu
 //completed
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 
-public class Savedgames  implements Screen{
+import java.io.Serializable;
+
+public class Savedgames  implements Screen, Serializable {
     final MyGdxGame game;
     Texture Background;
     Texture Logo;
@@ -24,6 +27,10 @@ public class Savedgames  implements Screen{
         sg3=new Texture("sgame3.png");
         backk=new Texture("backkey.png");
         creat=new Texture("createn.png");
+    }
+    public void Startgame(){
+        gamscreemImpl gs= new gamscreemImpl(game);
+        game.setScreen(gs);
     }
     public void menu(){
         Mainmenu mn=new Mainmenu(game);
@@ -50,11 +57,15 @@ public class Savedgames  implements Screen{
         if (Gdx.input.justTouched()) {
             System.out.println("x=" + Gdx.input.getX() + " y=" + Gdx.input.getY());
         }
-        if(Gdx.input.isTouched()&&(Gdx.input.getX()> 20 && Gdx.input.getX()<72) && (Gdx.input.getY()>27 && Gdx.input.getY()<53) ){
+        if(Gdx.input.isKeyPressed(Input.Keys.P)){
+            this.Startgame();
+        }
+        if(Gdx.input.isKeyPressed(Input.Keys.M) ){
             this.menu();
         }
         game.batch.end();
     }
+
 
     @Override
     public void resize(int width, int height) {

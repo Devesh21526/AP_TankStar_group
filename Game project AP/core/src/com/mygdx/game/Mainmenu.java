@@ -1,6 +1,7 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -77,10 +78,10 @@ public class Mainmenu implements Screen {
         }
 
 
-        if(Gdx.input.isTouched()&&((Gdx.input.getX() > 337 && Gdx.input.getX()<512) && (Gdx.input.getY()>61 && Gdx.input.getY()<109)) ){
+        if(Gdx.input.isKeyPressed(Input.Keys.N)){
            this.Startgame();
         }
-        if(Gdx.input.isTouched()&&((Gdx.input.getX() > 337 && Gdx.input.getX()<512) && (Gdx.input.getY()>222 && Gdx.input.getY()<265)) ){
+        if(Gdx.input.isKeyPressed(Input.Keys.S) ){
             this.Saved();
         }
 
